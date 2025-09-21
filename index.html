@@ -1,70 +1,63 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <title>Чотири типи клітин</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Чотири типи клітин</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Чотири типи клітин</h1>
-        <nav>
-            <ul>
-                <li><a href="#plants">Рослинні</a></li>
-                <li><a href="#animals">Тваринні</a></li>
-                <li><a href="#fungi">Грибні</a></li>
-                <li><a href="#bacteria">Бактерії</a></li>
-                <li><a href="#game">Міні-гра</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <h1>Чотири типи клітин</h1>
+    <nav>
+      <a href="#plant">Рослинна клітина</a>
+      <a href="#animal">Тваринна клітина</a>
+      <a href="#fungi">Клітина грибів</a>
+      <a href="#bacteria">Бактеріальна клітина</a>
+    </nav>
+  </header>
 
-    <main>
-        <section id="plants" class="cell plant">
-            <h2>Клітини рослин</h2>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Plant_cell_structure.svg/300px-Plant_cell_structure.svg.png" alt="Клітина рослини">
-            <p>Мають клітинну стінку з целюлози, хлоропласти для фотосинтезу та велику центральну вакуолю.</p>
-        </section>
+  <main>
+    <section id="plant">
+      <h2>Рослинна клітина</h2>
+      <p>Рослинні клітини мають клітинну стінку з целюлози, великі вакуолі та хлоропласти для фотосинтезу.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Plant_cell_structure.svg" alt="Рослинна клітина">
+    </section>
 
-        <section id="animals" class="cell animal">
-            <h2>Клітини тварин</h2>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Animal_cell_structure_en.svg/300px-Animal_cell_structure_en.svg.png" alt="Клітина тварини">
-            <p>Не мають клітинної стінки і хлоропластів, але мають лізосоми та розвинену систему органел.</p>
-        </section>
+    <section id="animal">
+      <h2>Тваринна клітина</h2>
+      <p>Тваринні клітини не мають клітинної стінки та хлоропластів, але містять багато мітохондрій.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Animal_cell_structure_en.svg" alt="Тваринна клітина">
+    </section>
 
-        <section id="fungi" class="cell fungi">
-            <h2>Клітини грибів</h2>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Fungal_cell_structure.svg/300px-Fungal_cell_structure.svg.png" alt="Клітина гриба">
-            <p>Мають клітинну стінку з хітину, ядро та органели, але не мають хлоропластів.</p>
-        </section>
+    <section id="fungi">
+      <h2>Клітина грибів</h2>
+      <p>Клітини грибів мають клітинну стінку з хітину, не здатні до фотосинтезу, отримують поживні речовини з довкілля.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Fungal_cell_structure.svg" alt="Клітина грибів">
+    </section>
 
-        <section id="bacteria" class="cell bacteria">
-            <h2>Клітини бактерій</h2>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Prokaryote_cell_diagram.svg/300px-Prokaryote_cell_diagram.svg.png" alt="Клітина бактерії">
-            <p>Є прокаріотами — не мають ядра. ДНК розташована в цитоплазмі, стінка складається з муреїну.</p>
-        </section>
+    <section id="bacteria">
+      <h2>Бактеріальна клітина</h2>
+      <p>Бактерії — прокаріоти, їхні клітини не мають ядра, ДНК розташована у нуклеоїді.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Prokaryote_cell_diagram.svg" alt="Бактеріальна клітина">
+    </section>
 
-        <!-- Міні-гра -->
-        <section id="game" class="cell game">
-            <h2>Міні-гра: Вгадай клітину</h2>
-            <p>Подивись на картинку та обери, яка це клітина:</p>
-            <img id="quizImage" src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Plant_cell_structure.svg" alt="Картинка клітини" width="300">
+    <!-- Міні-гра -->
+    <section id="game">
+      <h2>Міні-гра: Вгадай клітину</h2>
+      <div id="question">Натисни кнопку, щоб почати!</div>
+      <input type="text" id="answer" placeholder="Ваша відповідь">
+      <br>
+      <button onclick="checkAnswer()">Відповісти</button>
+      <button onclick="newQuestion()">Нове питання</button>
+      <div id="result"></div>
+    </section>
+  </main>
 
-            <div class="buttons">
-                <button onclick="checkAnswer('plant')">Рослинна</button>
-                <button onclick="checkAnswer('animal')">Тваринна</button>
-                <button onclick="checkAnswer('fungi')">Грибна</button>
-                <button onclick="checkAnswer('bacteria')">Бактерія</button>
-            </div>
+  <footer>
+    <p>Сайт створено для навчання біології — приклад проєкту на 12 балів ⭐</p>
+  </footer>
 
-            <p id="result"></p>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 Сайт про клітини</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
