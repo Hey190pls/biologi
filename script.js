@@ -1,80 +1,72 @@
+const questions = [
+  {
+    q: "Яка клітина має хлоропласти?",
+    options: ["Рослинна", "Тваринна", "Грибна", "Бактеріальна"],
+    answer: "Рослинна"
+  },
+  {
+    q: "Яка клітина не має ядра?",
+    options: ["Рослинна", "Тваринна", "Бактеріальна", "Грибна"],
+    answer: "Бактеріальна"
+  },
+  {
+    q: "Яка клітина має хітинову стінку?",
+    options: ["Тваринна", "Грибна", "Рослинна", "Бактеріальна"],
+    answer: "Грибна"
+  },
+  {
+    q: "Яка органела відповідає за енергію клітини?",
+    options: ["Мітохондрія", "Ядро", "Вакуоля", "Хлоропласт"],
+    answer: "Мітохондрія"
+  },
+  {
+    q: "Де знаходиться ДНК у прокаріотів?",
+    options: ["Ядро", "Вакуоля", "Нуклеоїд", "Хлоропласт"],
+    answer: "Нуклеоїд"
+  }
+];
+
+let current = 0;
 let score = 0;
-let time = 30;
-let gameInterval = null;
-let organelles = [];
 
-const organelleNames = ["ядро", "хлоропласт", "мітохондрія", "лізосома", "вакуоля"];
-const badOrganelles = ["рибосома", "ендоплазматичний ретикулум", "цитоплазма"];
+const questionEl = document.getElementById("question");
+const answerBtns = document.querySelectorAll(".answer-btn");
+const scoreEl = document.getElementById("score");
+const startBtn = document.getElementById("start-btn");
 
-function createOrganel(name, isCorrect) {
-  const div = document.createElement("div");
-  div.className = "organel";
-  div.textContent = name;
-  div.dataset.correct = isCorrect;
-  div.style.top = Math.random() * 350 + "px";
-  div.style.left = Math.random() * 800 + "px";
-
-  div.onclick = () => {
-    if(time <= 0) return;
-    if(div.dataset.correct === "true") {
-      score++;
-      div.style.background = "#4db6ac";
-    } else {
-      score--;
-      div.style.background = "#e57373";
-    }
-    updateScore();
-  };
-
-  document.getElementById("game-board").appendChild(div);
-  organelles.push({el: div, dx: (Math.random()-0.5)*3, dy: (Math.random()-0.5)*3});
-}
-
-function updateScore() {
-  document.getElementById("score").textContent = "Бали: " + score;
-}
-
-function updateTimer() {
-  document.getElementById("timer").textContent = "Час: " + time;
-}
+startBtn.addEventListener("click", startGame);
 
 function startGame() {
-  resetGame();
-  // створення органел
-  for(let i=0; i<5; i++) createOrganel(organelleNames[i], true);
-  for(let i=0; i<3; i++) createOrganel(badOrganelles[i], false);
-
-  gameInterval = setInterval(() => {
-    time--;
-    updateTimer();
-    moveOrganelles();
-    if(time <= 0) {
-      clearInterval(gameInterval);
-      alert("Час вичерпано! Ваш рахунок: " + score);
-    }
-  }, 1000);
+  score = 0;
+  current = 0;
+  scoreEl.textContent = "Бали: " + score;
+  startBtn.style.display = "none";
+  showQuestion();
 }
 
-function moveOrganelles() {
-  organelles.forEach(obj => {
-    let el = obj.el;
-    let top = parseFloat(el.style.top);
-    let left = parseFloat(el.style.left);
-    top += obj.dy;
-    left += obj.dx;
-    if(top < 0 || top > 350) obj.dy *= -1;
-    if(left < 0 || left > 800) obj.dx *= -1;
-    el.style.top = top + "px";
-    el.style.left = left + "px";
+function showQuestion() {
+  if(current >= questions.length) {
+    questionEl.textContent = "Гра завершена! Ваш рахунок: " + score;
+    answerBtns.forEach(btn => btn.style.display = "none");
+    startBtn.style.display = "inline-block";
+    startBtn.textContent = "Грати ще раз";
+    return;
+  }
+
+  const q = questions[current];
+  questionEl.textContent = q.q;
+  answerBtns.forEach((btn, i) => {
+    btn.textContent = q.options[i];
+    btn.style.display = "inline-block";
+    btn.onclick = () => checkAnswer(btn.textContent);
   });
 }
 
-function resetGame() {
-  if(gameInterval) clearInterval(gameInterval);
-  time = 30;
-  score = 0;
-  updateScore();
-  updateTimer();
-  organelles.forEach(obj => obj.el.remove());
-  organelles = [];
+function checkAnswer(selected) {
+  if(selected === questions[current].answer) {
+    score++;
+  }
+  scoreEl.textContent = "Бали: " + score;
+  current++;
+  showQuestion();
 }
