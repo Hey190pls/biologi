@@ -1,41 +1,30 @@
-const quizData = [
-    {
-        type: "plant",
-        img: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Plant_cell_structure.svg"
-    },
-    {
-        type: "animal",
-        img: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Animal_cell_structure_en.svg"
-    },
-    {
-        type: "fungi",
-        img: "https://upload.wikimedia.org/wikipedia/commons/8/8d/Fungal_cell_structure.svg"
-    },
-    {
-        type: "bacteria",
-        img: "https://upload.wikimedia.org/wikipedia/commons/0/02/Prokaryote_cell_diagram.svg"
-    }
+const questions = [
+  { q: "Яка клітина має хлоропласти?", a: "рослинна" },
+  { q: "Яка клітина не має ядра?", a: "бактеріальна" },
+  { q: "Яка клітина має хітинову стінку?", a: "грибів" },
+  { q: "Яка клітина не має клітинної стінки?", a: "тваринна" }
 ];
+let current = null;
 
-let current = 0;
-
-function loadQuestion() {
-    const q = quizData[Math.floor(Math.random() * quizData.length)];
-    document.getElementById("quizImage").src = q.img;
-    document.getElementById("quizImage").dataset.answer = q.type;
-    document.getElementById("result").textContent = "";
+function newQuestion() {
+  const rand = Math.floor(Math.random() * questions.length);
+  current = questions[rand];
+  document.getElementById("question").textContent = current.q;
+  document.getElementById("result").textContent = "";
+  document.getElementById("answer").value = "";
 }
 
-function checkAnswer(answer) {
-    const correct = document.getElementById("quizImage").dataset.answer;
-    if (answer === correct) {
-        document.getElementById("result").textContent = "✅ Молодець! Правильно!";
-        document.getElementById("result").style.color = "green";
-        setTimeout(loadQuestion, 2000);
-    } else {
-        document.getElementById("result").textContent = "❌ Неправильно, спробуй ще!";
-        document.getElementById("result").style.color = "red";
-    }
+function checkAnswer() {
+  const userAnswer = document.getElementById("answer").value.trim().toLowerCase();
+  if (!current) {
+    document.getElementById("result").textContent = "Спочатку натисни 'Нове питання'.";
+    return;
+  }
+  if (userAnswer === current.a) {
+    document.getElementById("result").textContent = "✅ Правильно!";
+    document.getElementById("result").style.color = "green";
+  } else {
+    document.getElementById("result").textContent = "❌ Неправильно. Правильна відповідь: " + current.a;
+    document.getElementById("result").style.color = "red";
+  }
 }
-
-window.onload = loadQuestion;
