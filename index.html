@@ -1,204 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Чотири типи клітин — рослинні, тваринні, грибні, бактеріальні</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Чотири типи клітин</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div>
-      <h1>Чотири типи клітин</h1>
-      <div class="subtitle">Короткий та наочний путівник по рослинних, тваринних, грибних та бактеріальних клітинах</div>
-    </div>
-    <nav>
-      <button class="btn" id="btn-light">Світла/Темна</button>
-      <button class="btn" id="btn-download">Завантажити HTML</button>
-    </nav>
-  </header>
+    <header>
+        <h1>Чотири типи клітин</h1>
+        <nav>
+            <ul>
+                <li><a href="#plants">Рослинні</a></li>
+                <li><a href="#animals">Тваринні</a></li>
+                <li><a href="#fungi">Грибні</a></li>
+                <li><a href="#bacteria">Бактерії</a></li>
+                <li><a href="#game">Міні-гра</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main class="container">
-    <div class="grid">
-      <section>
-        <div class="card">
-          <div class="tabs" role="tablist">
-            <button class="tab active" data-target="plant">Рослинна</button>
-            <button class="tab" data-target="animal">Тваринна</button>
-            <button class="tab" data-target="fungi">Грибна</button>
-            <button class="tab" data-target="bacteria">Бактеріальна</button>
-          </div>
+    <main>
+        <section id="plants" class="cell plant">
+            <h2>Клітини рослин</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Plant_cell_structure.svg/300px-Plant_cell_structure.svg.png" alt="Клітина рослини">
+            <p>Мають клітинну стінку з целюлози, хлоропласти для фотосинтезу та велику центральну вакуолю.</p>
+        </section>
 
-          <div id="content">
-            <!-- Plant -->
-            <article class="cell-content" id="plant">
-              <div class="cell-illustration">
-                <svg viewBox="0 0 300 200" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
-                  <rect x="6" y="6" width="288" height="188" rx="14" fill="#0b2a12" stroke="#134d22" stroke-width="3"/>
-                  <ellipse cx="150" cy="95" rx="60" ry="44" fill="#134d22" opacity="0.9"/>
-                  <circle cx="170" cy="80" r="18" fill="#b3f0c8" opacity="0.9"/>
-                  <rect x="40" y="120" width="60" height="10" rx="6" fill="#2e7d32"/>
-                </svg>
-              </div>
-              <h2>Рослинна клітина</h2>
-              <p>Рослинні клітини мають жорстку клітинну стінку, великий центральний вакуоль і хлоропласти — органели, що виконують фотосинтез. Вони зазвичай прямокутної форми та утворюють тканини, які роблять стебла, листки та корені міцними.</p>
-              <strong>Ключові органели:</strong>
-              <ul>
-                <li>Клітинна стінка (целлюлоза)</li>
-                <li>Центральна вакуоля</li>
-                <li>Хлоропласти (фотосинтез)</li>
-                <li>Мітохондрії, рибосоми, ендоплазматичний ретикулум</li>
-              </ul>
-              <p><strong>Функція:</strong> виробництво органічних речовин через фотосинтез, запас води та підтримка форми рослини.</p>
-            </article>
+        <section id="animals" class="cell animal">
+            <h2>Клітини тварин</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Animal_cell_structure_en.svg/300px-Animal_cell_structure_en.svg.png" alt="Клітина тварини">
+            <p>Не мають клітинної стінки і хлоропластів, але мають лізосоми та розвинену систему органел.</p>
+        </section>
 
-            <!-- Animal -->
-            <article class="cell-content" id="animal" style="display:none">
-              <div class="cell-illustration">
-                <svg viewBox="0 0 300 200" width="100%" height="100%">
-                  <ellipse cx="150" cy="100" rx="106" ry="68" fill="#1b1e2b" stroke="#2b2f3d" stroke-width="3"/>
-                  <circle cx="120" cy="90" r="20" fill="#ffd9b3"/>
-                  <circle cx="180" cy="110" r="12" fill="#cbd5ff"/>
-                  <rect x="70" y="120" width="30" height="8" rx="4" fill="#7f5a3d"/>
-                </svg>
-              </div>
-              <h2>Тваринна клітина</h2>
-              <p>Тваринні клітини зазвичай округлі або овальні, не мають клітинної стінки чи хлоропластів. У них є комплексна система органел, що підтримує рух, сигналізацію та енергетичний обмін.</p>
-              <strong>Ключові органели:</strong>
-              <ul>
-                <li>Мітохондрії (джерело енергії)</li>
-                <li>Лізосоми (перетравлення)</li>
-                <li>Ядро з ДНК</li>
-                <li>Цитоскелет (підтримка та рух)</li>
-              </ul>
-              <p><strong>Функція:</strong> рухливість, обмін речовин, спеціалізація у тканинах і органах тварин.</p>
-            </article>
+        <section id="fungi" class="cell fungi">
+            <h2>Клітини грибів</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Fungal_cell_structure.svg/300px-Fungal_cell_structure.svg.png" alt="Клітина гриба">
+            <p>Мають клітинну стінку з хітину, ядро та органели, але не мають хлоропластів.</p>
+        </section>
 
-            <!-- Fungi -->
-            <article class="cell-content" id="fungi" style="display:none">
-              <div class="cell-illustration">
-                <svg viewBox="0 0 300 200" width="100%" height="100%">
-                  <rect x="10" y="10" width="280" height="180" rx="16" fill="#11121a" stroke="#2a2330" stroke-width="3"/>
-                  <ellipse cx="90" cy="100" rx="30" ry="22" fill="#a58fb7"/>
-                  <ellipse cx="170" cy="95" rx="28" ry="20" fill="#c5a6d6"/>
-                  <ellipse cx="230" cy="110" rx="18" ry="14" fill="#8f6aa8"/>
-                </svg>
-              </div>
-              <h2>Грибна клітина</h2>
-              <p>Грибні клітини (наприклад, у дріжджів) мають клітинну стінку, але вона складається з хітину, а не целюлози. Деякі гриби — одноклітинні (дріжджі), інші — багатоклітинні з довгими нитками (гіфами).</p>
-              <strong>Ключові органели:</strong>
-              <ul>
-                <li>Клітинна стінка з хітину</li>
-                <li>Вакуолі</li>
-                <li>Мітохондрії, ядро</li>
-                <li>Екзозоми/секреторні везикули</li>
-              </ul>
-              <p><strong>Функція:</strong> розклад органічних речовин, симбіоз або паразитизм, роль у екосистемах як редуценти.</p>
-            </article>
+        <section id="bacteria" class="cell bacteria">
+            <h2>Клітини бактерій</h2>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Prokaryote_cell_diagram.svg/300px-Prokaryote_cell_diagram.svg.png" alt="Клітина бактерії">
+            <p>Є прокаріотами — не мають ядра. ДНК розташована в цитоплазмі, стінка складається з муреїну.</p>
+        </section>
 
-            <!-- Bacteria -->
-            <article class="cell-content" id="bacteria" style="display:none">
-              <div class="cell-illustration">
-                <svg viewBox="0 0 300 200" width="100%" height="100%">
-                  <rect x="8" y="8" width="284" height="184" rx="14" fill="#071227" stroke="#0b3b5a" stroke-width="3"/>
-                  <rect x="60" y="60" width="140" height="50" rx="24" fill="#274e6f"/>
-                  <path d="M70 80 q40 -20 100 0" fill="none" stroke="#8fe0ff" stroke-width="2"/>
-                  <circle cx="90" cy="85" r="4" fill="#bfeaff"/>
-                </svg>
-              </div>
-              <h2>Бактеріальна клітина (прокаріота)</h2>
-              <p>Бактерії — прокаріотичні організми: у них немає ядра, ДНК знаходиться у нуклеоїді. Вони менші за еукаріот і часто мають клітинну стінку, плазміди та різноманітні джгутики або ворсинки.</p>
-              <strong>Ключові структури:</strong>
-              <ul>
-                <li>Нуклеоїд (ДНК)</li>
-                <li>Цитоплазма та рибосоми</li>
-                <li>Клітинна мембрана та стінка</li>
-                <li>Плазміди, джгутики</li>
-              </ul>
-              <p><strong>Функція:</strong> велике різноманіття метаболізмів: від фотосинтетичних до хемосинтетичних, важливі в екології та медицині.</p>
-            </article>
-          </div>
+        <!-- Міні-гра -->
+        <section id="game" class="cell game">
+            <h2>Міні-гра: Вгадай клітину</h2>
+            <p>Подивись на картинку та обери, яка це клітина:</p>
+            <img id="quizImage" src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Plant_cell_structure.svg" alt="Картинка клітини" width="300">
 
-          <hr style="border:none; border-top:1px solid rgba(255,255,255,0.03); margin:14px 0" />
+            <div class="buttons">
+                <button onclick="checkAnswer('plant')">Рослинна</button>
+                <button onclick="checkAnswer('animal')">Тваринна</button>
+                <button onclick="checkAnswer('fungi')">Грибна</button>
+                <button onclick="checkAnswer('bacteria')">Бактерія</button>
+            </div>
 
-          <div>
-            <h3>Порівняння (коротко)</h3>
-            <table>
-              <thead><tr><th>Ознака</th><th>Рослинна</th><th>Тваринна</th><th>Грибна</th><th>Бактерія</th></tr></thead>
-              <tbody>
-                <tr><td>Ядро</td><td>Є</td><td>Є</td><td>Є</td><td>Ні</td></tr>
-                <tr><td>Клітинна стінка</td><td>Так (целюлоза)</td><td>Ні</td><td>Так (хітин)</td><td>Зазвичай є</td></tr>
-                <tr><td>Хлоропласти</td><td>Так</td><td>Ні</td><td>Ні</td><td>Інколи (ціанобактерії)</td></tr>
-                <tr><td>Розмір</td><td>Середній</td><td>Середній</td><td>Різний</td><td>Маленькі</td></tr>
-              </tbody>
-            </table>
-          </div>
+            <p id="result"></p>
+        </section>
+    </main>
 
-        </div>
-      </section>
+    <footer>
+        <p>© 2025 Сайт про клітини</p>
+    </footer>
 
-      <aside>
-        <div class="card">
-          <h3>Навігація по темам</h3>
-          <div class="cells-list">
-            <div class="cell-card"><strong>Рослинна</strong><div class="subtitle">Клітинна стінка, хлоропласти, вакуолі</div></div>
-            <div class="cell-card"><strong>Тваринна</strong><div class="subtitle">Лізосоми, цитоскелет, рух</div></div>
-            <div class="cell-card"><strong>Грибна</strong><div class="subtitle">Хітин, гіфи, розклад</div></div>
-            <div class="cell-card"><strong>Бактеріальна</strong><div class="subtitle">Прокаріота, плазміди, джгутики</div></div>
-          </div>
-
-          <hr style="border:none; border-top:1px solid rgba(255,255,255,0.03); margin:12px 0" />
-          <h4>Швидкі факти</h4>
-          <ul>
-            <li>Еукаріоти: рослини, тварини, гриби — мають ядро.</li>
-            <li>Прокаріоти (бактерії) — простіші, але надзвичайно різноманітні.</li>
-            <li>Хлоропласти походять від фотосинтетичних бактерій (ендосимбіотична теорія).</li>
-          </ul>
-        </div>
-
-        <div class="card" style="margin-top:12px; text-align:center">
-          <strong>Використання</strong>
-          <p class="subtitle">Підходить як навчальний матеріал для шкіл або швидкий рефреш перед контрольною.</p>
-          <button class="btn" id="btn-print" style="width:100%; margin-top:8px">Друк/Експорт PDF</button>
-        </div>
-      </aside>
-    </div>
-  </main>
-
-  <footer>
-    <div style="max-width:var(--maxw); margin:0 auto">Автор: освітній односторінковий сайт • Мова: українська • Можна редагувати текст та ілюстрації</div>
-  </footer>
-
-  <script>
-    document.querySelectorAll('.tab').forEach(tab=>{
-      tab.addEventListener('click', ()=>{
-        document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-        tab.classList.add('active');
-        const target = tab.dataset.target;
-        document.querySelectorAll('.cell-content').forEach(c=>c.style.display='none');
-        document.getElementById(target).style.display='block';
-      });
-    });
-
-    document.getElementById('btn-light').addEventListener('click', ()=>{
-      if(document.body.style.filter === 'invert(1)'){
-        document.body.style.filter = '';
-      } else {
-        document.body.style.filter = 'invert(1) hue-rotate(180deg)';
-      }
-    });
-
-    document.getElementById('btn-print').addEventListener('click', ()=>{
-      window.print();
-    });
-
-    document.getElementById('btn-download').addEventListener('click', ()=>{
-      const content = '<!doctype html>' + document.documentElement.outerHTML;
-      const blob = new Blob([content], {type: 'text/html;charset=utf-8'});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url; a.download = 'chotyry_klytyny.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
-    });
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
