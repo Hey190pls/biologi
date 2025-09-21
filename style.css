@@ -1,0 +1,131 @@
+/* Загальні стилі */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f2f5;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Хедер */
+header {
+    background: linear-gradient(135deg, #4CAF50, #2e7d32);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Меню */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Секції */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.cell {
+    margin: 30px 0;
+    padding: 20px;
+    border-radius: 12px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.cell img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.cell:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+}
+
+.plant { background: linear-gradient(135deg, #81c784, #4CAF50); }
+.animal { background: linear-gradient(135deg, #64b5f6, #1e88e5); }
+.fungi { background: linear-gradient(135deg, #ba68c8, #8e24aa); }
+.bacteria { background: linear-gradient(135deg, #ff8a65, #d84315); }
+.game { background: linear-gradient(135deg, #ffd54f, #fbc02d); color: #333; }
+
+/* Кнопки гри */
+.buttons {
+    margin: 15px 0;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #555;
+}
+
+#result {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Футер */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #333;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Адаптивність */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    header h1 {
+        font-size: 1.5em;
+    }
+    .cell {
+        font-size: 0.95em;
+    }
+}
