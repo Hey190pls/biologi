@@ -3,23 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Гра: Вікторина про клітини</title>
+  <title>Клітини: будова та гра</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Вікторина: Клітини</h1>
+    <h1>Вивчаємо клітини</h1>
+    <nav>
+      <a href="#plant">Рослинна</a>
+      <a href="#animal">Тваринна</a>
+      <a href="#fungi">Грибна</a>
+      <a href="#bacteria">Бактеріальна</a>
+      <a href="#game">Гра</a>
+    </nav>
   </header>
 
   <main>
-    <section id="info" class="cell-section">
-      <h2>Про клітини</h2>
-      <p>Клітини – це основні структурні одиниці живих організмів. Є різні типи клітин: рослинні, тваринні, грибні та бактеріальні.</p>
-      <p>В цій грі ви будете відповідати на запитання про будову та функції клітин.</p>
+    <!-- Рослинна клітина -->
+    <section id="plant" class="cell-section">
+      <h2>Рослинна клітина</h2>
+      <p>Рослинні клітини мають:</p>
+      <ul>
+        <li>Клітинну стінку з целюлози</li>
+        <li>Хлоропласти для фотосинтезу</li>
+        <li>Велику центральну вакуолю</li>
+        <li>Ядро, мітохондрії, ендоплазматичний ретикулум та рибосоми</li>
+        <li>Плазматичні мембрани, що контролюють обмін речовин</li>
+      </ul>
+      <p><strong>Цікаво:</strong> Хлоропласти дозволяють перетворювати світлову енергію на хімічну.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Plant_cell_structure.svg" alt="Рослинна клітина">
     </section>
 
+    <!-- Тваринна клітина -->
+    <section id="animal" class="cell-section">
+      <h2>Тваринна клітина</h2>
+      <ul>
+        <li>Не має клітинної стінки</li>
+        <li>Має ядро та цитоплазму</li>
+        <li>Мітохондрії, лізосоми, ендоплазматичний ретикулум, рибосоми</li>
+        <li>Гнучка мембрана, що дозволяє рух</li>
+      </ul>
+      <p><strong>Цікаво:</strong> Тваринні клітини здатні до фагоцитозу і активно беруть участь у тканинних взаємодіях.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Animal_cell_structure_en.svg" alt="Тваринна клітина">
+    </section>
+
+    <!-- Грибна клітина -->
+    <section id="fungi" class="cell-section">
+      <h2>Грибна клітина</h2>
+      <ul>
+        <li>Має клітинну стінку з хітину</li>
+        <li>Має ядро та органели</li>
+        <li>Не має хлоропластів, отримує поживні речовини з довкілля</li>
+      </ul>
+      <p><strong>Цікаво:</strong> Гриби грають ключову роль у розкладанні органічних речовин і симбіозі з рослинами.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Fungal_cell_structure.svg" alt="Грибна клітина">
+    </section>
+
+    <!-- Бактеріальна клітина -->
+    <section id="bacteria" class="cell-section">
+      <h2>Бактеріальна клітина</h2>
+      <ul>
+        <li>Прокаріотична, немає ядра</li>
+        <li>ДНК розташована у нуклеоїді</li>
+        <li>Клітинна стінка з муреїну</li>
+        <li>Можуть мати джгутики для руху</li>
+      </ul>
+      <p><strong>Цікаво:</strong> Бактерії — найпоширеніші організми на Землі і виконують важливі екологічні функції.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Prokaryote_cell_diagram.svg" alt="Бактеріальна клітина">
+    </section>
+
+    <!-- Гра -->
     <section id="game" class="cell-section">
-      <h2>Гра: Вибери правильну відповідь</h2>
+      <h2>Гра: Вікторина про клітини</h2>
+      <p>Виберіть правильну відповідь на запитання про клітини. Правильна відповідь додає 1 бал.</p>
       <div id="question">Натисніть "Почати гру", щоб побачити перше запитання.</div>
       <div id="answers">
         <button class="answer-btn"></button>
