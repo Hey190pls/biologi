@@ -25,7 +25,6 @@ nav a {
 }
 
 nav a:hover {
-  text-decoration: underline;
   color: #ffeb3b;
 }
 
@@ -35,7 +34,7 @@ main {
   margin: auto;
 }
 
-section {
+.cell-section {
   background: white;
   margin: 20px 0;
   padding: 20px;
@@ -44,20 +43,64 @@ section {
   transition: transform 0.3s;
 }
 
-section:hover {
+.cell-section:hover {
   transform: scale(1.02);
 }
 
-h2 {
+.cell-section h2 {
   color: #2e7d32;
 }
 
-img {
+.cell-section img {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
   margin-top: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Гра */
+#game-board {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.organel {
+  flex: 1 1 120px;
+  padding: 20px;
+  background: #81c784;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.organel:hover {
+  transform: scale(1.1);
+}
+
+#score {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #2e7d32;
 }
 
 footer {
@@ -66,46 +109,4 @@ footer {
   background: #333;
   color: white;
   margin-top: 40px;
-}
-
-/* Міні-гра */
-#game {
-  text-align: center;
-  margin-top: 30px;
-  background: #e8f5e9;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-
-#question {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-input {
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  width: 200px;
-}
-
-button {
-  padding: 8px 15px;
-  border: none;
-  border-radius: 5px;
-  background: #4CAF50;
-  color: white;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #2e7d32;
-}
-
-#result {
-  margin-top: 10px;
-  font-weight: bold;
 }
